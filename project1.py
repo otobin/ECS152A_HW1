@@ -78,10 +78,14 @@ class Range:
         if index_of_changed == 4:
             return self.string_start_range
         remainder = prefix % 8
+        # Change the number in the middle of the prefix
         num_to_modify = int(start_range_array[index_of_changed])
+        # Convert to binary
         binary_array = convert_to_binary(num_to_modify)
+        # Set the rest of the bits to 1
         for i in range(remainder, 8):
             binary_array[i] = 1
+        # Convert back to decimal
         new_num = convert_from_binary(binary_array)
         start_range_array[index_of_changed] = new_num
         # Fill in the remaining elements with 255
