@@ -78,6 +78,8 @@ class Range:
         if index_of_changed == 4:
             return self.string_start_range
         remainder = prefix % 8
+        if (start_range_array[index_of_changed] == ''):
+            start_range_array[index_of_changed] = 0
         # Change the number in the middle of the prefix
         num_to_modify = int(start_range_array[index_of_changed])
         # Convert to binary
