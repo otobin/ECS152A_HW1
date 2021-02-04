@@ -134,5 +134,6 @@ if __name__ == "__main__":
         destination_ip = find_max_overlap(overlapping_hash[ip])
         # Eg: 208.0.0.0/11  1239 208.30.172.70
         return_string = destination_ip.string_start_range + '/' + str(destination_ip.prefix) + " " + \
-                        str(destination_ip.as_number) + " " + ip + "\n"
-        output_string = file2.readline()
+                        str(destination_ip.as_number) + " " + ip
+        # Print the results, don't output to file.
+        print(return_string)
